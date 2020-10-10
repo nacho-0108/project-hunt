@@ -23,7 +23,7 @@ import fb from "../../../src/firebase-config";
 import AuthContext from "../../../src/AuthContext";
 import {useRouter} from "next/router";
 import ReactDOM from 'react-dom';
-import OutlinedTimeline from '../components/Timeline';
+import OutlinedTimeline from '../components/Timeline.js';
 
 
     
