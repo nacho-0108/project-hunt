@@ -188,7 +188,7 @@ export default function FullScreenDialog({isOpen, onClose, pageData, projectId})
                                             <MenuItem value="15+ hours">15+ hours</MenuItem>
                                         </Select>
 
-                                            <TextField id="outlined-basic" label="timeline1"
+                                            <TextField id="outlined-basic" label="First meeting Date"
                                                variant="outlined" value={timeline1}
                                              onChange={event => setTimeline1(event.target.value)}/>
                                     </FormControl>
