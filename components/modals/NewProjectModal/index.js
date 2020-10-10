@@ -25,7 +25,7 @@ import {useRouter} from "next/router";
 import ReactDOM from 'react-dom';
 import Timeline from '../components/Timeline';
 
-ReactDOM.render(<Demo />, document.querySelector('#root'));
+
     
 
 
@@ -190,6 +190,7 @@ export default function FullScreenDialog({isOpen, onClose, pageData, projectId})
 
                                 </div>
 
+                                    ReactDOM.render(<Timeline />, document.querySelector('#root'));
 
                             </Box>
 
