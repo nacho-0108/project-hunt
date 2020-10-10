@@ -187,6 +187,40 @@ export default function FullScreenDialog({isOpen, onClose, pageData, projectId})
                                             <MenuItem value="6-10 hours">6-10 hours</MenuItem>
                                             <MenuItem value="15+ hours">15+ hours</MenuItem>
                                         </Select>
+
+                                    </FormControl>
+                                    <div className="w-full"/>
+
+                                </div>
+
+
+
+                            </Box>
+
+
+                        </Paper>
+
+
+                        <Paper variant="outlined">
+                            <Box p={4}>
+                                <h2 className="text-xl font-display">Timeline</h2>
+                                <div className="newProjectFormPanelGrid">
+
+                                    <FormControl variant="outlined">
+                                        <InputLabel id="demo-simple-select-outlined-label">Hours per week</InputLabel>
+                                        <Select
+                                            labelId="demo-simple-select-outlined-label"
+                                            id="demo-simple-select-outlined"
+                                            value={timeCommitment}
+                                            onChange={(event) =>
+                                                setTimeCommitment(event.target.value)}
+                                            label="Hours per week"
+                                        >
+                                            <MenuItem value="1-2 hours">1-2 hours</MenuItem>
+                                            <MenuItem value="3-5 hours">3-5 hours</MenuItem>
+                                            <MenuItem value="6-10 hours">6-10 hours</MenuItem>
+                                            <MenuItem value="15+ hours">15+ hours</MenuItem>
+                                        </Select>
                                         <div>
                                             <TextField id="outlined-basic" label="First meeting Date"
                                                variant="outlined" value={timeline1}
