@@ -24,7 +24,7 @@ import AuthContext from "../../../src/AuthContext";
 import {useRouter} from "next/router";
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Demo from 'components/demo';
+import Demo from 'components/Timeline';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -164,7 +164,7 @@ export default function FullScreenDialog({isOpen, onClose}) {
                                     <div className="w-full"/>
                                 </div>
                                 <div>
-                                ReactDOM.render(</components/Demo />, document.querySelector('#root'));
+                                ReactDOM.render(</components/Timeline />, document.querySelector('#root'));
                                 </div>
 
                             </Box>
