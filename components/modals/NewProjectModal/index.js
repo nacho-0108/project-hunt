@@ -180,14 +180,14 @@ export default function FullScreenDialog({isOpen, onClose, pageData, projectId})
                                             value={timeCommitment}
                                             onChange={(event) =>
                                                 setTimeCommitment(event.target.value)}
-                                            label="Hours per week -"
+                                            label="Hours per week"
                                         >
                                             <MenuItem value="1-2 hours">1-2 hours</MenuItem>
                                             <MenuItem value="3-5 hours">3-5 hours</MenuItem>
                                             <MenuItem value="6-10 hours">6-10 hours</MenuItem>
                                             <MenuItem value="15+ hours">15+ hours</MenuItem>
                                         </Select>
-                                        <div>
+                                        <div className="newProjectFormPanelGrid>
                                             <TextField id="outlined-basic" label="First meeting Date"
                                                variant="outlined" value={timeline1}
                                              onChange={event => setTimeline1(event.target.value)}/>
