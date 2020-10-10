@@ -187,7 +187,7 @@ export default function FullScreenDialog({isOpen, onClose, pageData, projectId})
                                             <MenuItem value="6-10 hours">6-10 hours</MenuItem>
                                             <MenuItem value="15+ hours">15+ hours</MenuItem>
                                         </Select>
-                                        <div className="newProjectFormPanelGrid>
+                                        <div>
                                             <TextField id="outlined-basic" label="First meeting Date"
                                                variant="outlined" value={timeline1}
                                              onChange={event => setTimeline1(event.target.value)}/>
