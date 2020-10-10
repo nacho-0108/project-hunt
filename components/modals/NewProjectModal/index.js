@@ -22,8 +22,7 @@ import {nanoid} from "nanoid";
 import fb from "../../../src/firebase-config";
 import AuthContext from "../../../src/AuthContext";
 import {useRouter} from "next/router";
-import ReactDOM from "react-dom";
-import Timeline from "components/Timeline.js";
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -40,13 +39,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(
-  <React.StrictMode>
-    <Timeline />
-  </React.StrictMode>,
-  rootElement
-);
+
 
 export default function FullScreenDialog({isOpen, onClose, pageData, projectId}) {
     const classes = useStyles();
