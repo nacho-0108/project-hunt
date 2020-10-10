@@ -95,7 +95,13 @@ export default function () {
                     <p className="mt-4 text-xl text-gray-700">{pageData.timeCommitment} per week</p>
                 </Box>
             </Paper>
-
+    
+            <Paper variant="outlined">
+                <Box p={4}>
+                    <h1 className="text-2xl font-display">Timeline</h1>
+                    <p className="mt-4 text-xl text-gray-700">First Meeting: {pageData.Timeline1}</p>
+                </Box>
+            </Paper>
 
         </Container>}
 
