@@ -11,7 +11,7 @@ import AuthContext from "../src/AuthContext";
 import LikeButton from "../components/LikeButton";
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import TagChip from "../components/TagChip";
-import Timeline from '@material-ui/lab/Timeline';
+
 
 export default function () {
     const router = useRouter()
