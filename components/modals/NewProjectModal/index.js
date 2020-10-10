@@ -89,6 +89,7 @@ export default function FullScreenDialog({isOpen, onClose, pageData, projectId})
             description: overview,
             category: category,
             timeCommitment: timeCommitment,
+            timeline1: timeline1,
             skills: skillArray,
             software: softwareArray,
             languages: languagesArray,
@@ -184,6 +185,10 @@ export default function FullScreenDialog({isOpen, onClose, pageData, projectId})
                                             <MenuItem value="6-10 hours">6-10 hours</MenuItem>
                                             <MenuItem value="15+ hours">15+ hours</MenuItem>
                                         </Select>
+
+                                            <TextField id="outlined-basic" label="timeline1"
+                                               variant="outlined" value={timeline1}
+                                             onChange={event => setTimeline1(event.target.value)}/>
                                     </FormControl>
                                     <div className="w-full"/>
 
