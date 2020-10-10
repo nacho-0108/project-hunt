@@ -24,7 +24,7 @@ import AuthContext from "../../../src/AuthContext";
 import {useRouter} from "next/router";
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Demo from './demo';
+import Demo from 'components/demo';
 
 
 const useStyles = makeStyles((theme) => ({
