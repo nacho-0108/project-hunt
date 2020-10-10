@@ -100,7 +100,7 @@ export default function () {
                 <Box p={4}>
                     <h1 className="text-2xl font-display">Timeline</h1>
                     <p className="mt-4 text-xl text-gray-700">First Meeting: {pageData.Timeline1}</p>
-                    <p className="mt-4 text-xl text-gray-700">First Meeting: {pageData.Timeline2}</p>
+                    <p className="mt-4 text-xl text-gray-700">Project Duedate: {pageData.Timeline2}</p>
                 </Box>
             </Paper>
 
