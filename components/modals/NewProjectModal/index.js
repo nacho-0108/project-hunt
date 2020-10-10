@@ -22,6 +22,10 @@ import {nanoid} from "nanoid";
 import fb from "../../../src/firebase-config";
 import AuthContext from "../../../src/AuthContext";
 import {useRouter} from "next/router";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Demo from './demo';
+
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
@@ -159,7 +163,9 @@ export default function FullScreenDialog({isOpen, onClose}) {
                                     </FormControl>
                                     <div className="w-full"/>
                                 </div>
-
+                                <div>
+                                ReactDOM.render(</components/Demo />, document.querySelector('#root'));
+                                </div>
 
                             </Box>
 
