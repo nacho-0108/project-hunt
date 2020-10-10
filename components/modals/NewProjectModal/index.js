@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -23,8 +23,6 @@ import fb from "../../../src/firebase-config";
 import AuthContext from "../../../src/AuthContext";
 import {useRouter} from "next/router";
 
-
-
 const useStyles = makeStyles((theme) => ({
     appBar: {
         position: 'relative',
@@ -39,12 +37,12 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function FullScreenDialog({isOpen, onClose}) {
+export default function FullScreenDialog({isOpen, onClose, pageData, projectId}) {
     const classes = useStyles();
 
     const [isLoading, toggleLoading] = useState(false)
 
-    const [projectTitle, setProjectTitle] = useState("")
+    const [projectTitle, setProjectTitle] = useState( "")
     const [category, setCategory] = useState("Student Initiative")
     const [overview, setOverview] = useState("")
     const [timeCommitment, setTimeCommitment] = useState("1-2 hours")
@@ -60,13 +58,29 @@ export default function FullScreenDialog({isOpen, onClose}) {
 
     const router = useRouter()
     const {authState, sessionInfo} = useContext(AuthContext)
+
+    useEffect(() => {
+        if (pageData) {
+            setProjectTitle(pageData.title)
+            setCategory(pageData.category)
+            setOverview(pageData.description)
+            setTimeCommitment(pageData.timeCommitment)
+            setSkillArray(pageData.skills)
+            setSoftwareArray(pageData.software)
+            setLanguagesArray(pageData.languages)
+        }
+
+    }, [pageData])
+
     function createProject() {
 
-        const newId = nanoid(12)
+        const newId = projectId ? projectId : nanoid(12)
         toggleLoading(true)
+
         fb.firestore().collection("projects").doc(newId).set({
             title: projectTitle,
             description: overview,
+            category: category,
             timeCommitment: timeCommitment,
             skills: skillArray,
             software: softwareArray,
@@ -74,7 +88,12 @@ export default function FullScreenDialog({isOpen, onClose}) {
             created_by: sessionInfo.uid
         })
             .then(function() {
-                router.push(`/${newId}`)
+                if (pageData) {
+                    onClose()
+                    toggleLoading(false)
+                } else {
+                    router.push(`/${newId}`)
+                }
             })
             .catch(function(error) {
                 toggleLoading(false)
@@ -88,14 +107,14 @@ export default function FullScreenDialog({isOpen, onClose}) {
     return (<Dialog fullScreen open={isOpen} onClose={handleClose} TransitionComponent={Transition}>
             <AppBar color="inherit" elevation={0} className="border-b border-lightGray relative">
                 <Toolbar>
-                    <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
+                    <IconButton disabled={isLoading} edge="start" color="inherit" onClick={handleClose} aria-label="close">
                         <CloseIcon/>
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
-                        New project
+                        {pageData ? "Edit project" : "New project"}
                     </Typography>
                     <Button variant="contained" color="primary" disabled={!formValid} onClick={createProject}>
-                        Publish
+                        {pageData ? "Save" : "Publish"}
                     </Button>
                 </Toolbar>
                 <LinearProgress hidden={!isLoading}/>
@@ -103,7 +122,7 @@ export default function FullScreenDialog({isOpen, onClose}) {
             </AppBar>
             <div className="overflow-y-scroll">
                 <Container maxWidth="md" className="my-24">
-                    <h1 className="mb-6 text-3xl font-display ">Create a new project</h1>
+                    <h1 className="mb-6 text-3xl font-display ">{pageData ? "Edit project" : "Create a new project"}</h1>
                     <div className="space-y-4">
                         <Paper variant="outlined">
                             <Box p={4}>
