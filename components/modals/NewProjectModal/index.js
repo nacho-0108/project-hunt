@@ -22,8 +22,7 @@ import {nanoid} from "nanoid";
 import fb from "../../../src/firebase-config";
 import AuthContext from "../../../src/AuthContext";
 import {useRouter} from "next/router";
-import ReactDOM from 'react-dom';
-import ColoredTimeline from '../components/Timeline.js';
+
 
 
     
@@ -178,7 +177,7 @@ export default function FullScreenDialog({isOpen, onClose, pageData, projectId})
                                             value={timeCommitment}
                                             onChange={(event) =>
                                                 setTimeCommitment(event.target.value)}
-                                            label="Hours per week"
+                                            label="Hours per week -"
                                         >
                                             <MenuItem value="1-2 hours">1-2 hours</MenuItem>
                                             <MenuItem value="3-5 hours">3-5 hours</MenuItem>
@@ -190,7 +189,7 @@ export default function FullScreenDialog({isOpen, onClose, pageData, projectId})
 
                                 </div>
 
-                                    ReactDOM.render(<Timeline />, document.querySelector('#root'));
+
 
                             </Box>
 
