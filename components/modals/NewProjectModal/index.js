@@ -25,7 +25,6 @@ import {useRouter} from "next/router";
 import ReactDOM from 'react-dom';
 import Timeline from '../components/Timeline';
 
-ReactDOM.render(<Demo />, document.querySelector('#root'));
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
@@ -179,13 +178,13 @@ export default function FullScreenDialog({isOpen, onClose, pageData, projectId})
                                             <MenuItem value="1-2 hours">1-2 hours</MenuItem>
                                             <MenuItem value="3-5 hours">3-5 hours</MenuItem>
                                             <MenuItem value="6-10 hours">6-10 hours</MenuItem>
-                                            <MenuItem value="15+ hours">15+ hours</MenuItem>
+                                            <MenuItem value="15+ hours">15+ 3 hours</MenuItem>
                                         </Select>
                                     </FormControl>
                                     <div className="w-full"/>
-                                    ReactDOM.render(<Demo />, document.querySelector('#root'));
-                                </div>
 
+                                </div>
+                                    ReactDOM.render(<Demo />, document.querySelector('#root'));
 
                             </Box>
 
