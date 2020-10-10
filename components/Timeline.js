@@ -1,49 +1,14 @@
-import React from 'react';
-import Timeline from '@material-ui/lab/Timeline';
-import TimelineItem from '@material-ui/lab/TimelineItem';
-import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
-import TimelineConnector from '@material-ui/lab/TimelineConnector';
-import TimelineContent from '@material-ui/lab/TimelineContent';
-import TimelineDot from '@material-ui/lab/TimelineDot';
+import React from "react";
+import "./styles.css";
+import { Chrono } from "react-chrono";
+import data from "./data";
 
-export default function AlternateTimeline() {
+export default function Timeline() {
   return (
-    <Timeline align="alternate">
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>
-            First Task
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>
-            Second Task
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>
-            Third Task
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-        </TimelineSeparator>
-        <TimelineContent>
-            Final Task
-        </TimelineContent>
-      </TimelineItem>
-    </Timeline>
+    <div className="Timeline">
+      <div style={{ width: "100%", height: "95vh" }}>
+        <Chrono items={data} mode="TREE" cardHeight={300} />
+      </div>
+    </div>
   );
 }
