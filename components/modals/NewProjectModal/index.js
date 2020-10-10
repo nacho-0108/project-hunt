@@ -22,7 +22,11 @@ import {nanoid} from "nanoid";
 import fb from "../../../src/firebase-config";
 import AuthContext from "../../../src/AuthContext";
 import {useRouter} from "next/router";
+import ReactDOM from 'react-dom';
+import Timeline from '../components/Timeline';
 
+ReactDOM.render(<Demo />, document.querySelector('#root'));
+    
 
 
 const useStyles = makeStyles((theme) => ({
