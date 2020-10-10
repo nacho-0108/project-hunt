@@ -22,6 +22,9 @@ import {nanoid} from "nanoid";
 import fb from "../../../src/firebase-config";
 import AuthContext from "../../../src/AuthContext";
 import {useRouter} from "next/router";
+import React, { useState } from 'react';
+import DatePicker from 'react-date-picker';
+ 
 
 
 
@@ -111,7 +114,10 @@ export default function FullScreenDialog({isOpen, onClose, pageData, projectId})
 
     }
 
+    function MyApp() {
+      const [value, onChange] = useState(new Date());
 
+    }
 
 
     return (<Dialog fullScreen open={isOpen} onClose={handleClose} TransitionComponent={Transition}>
@@ -212,6 +218,15 @@ export default function FullScreenDialog({isOpen, onClose, pageData, projectId})
                                             <TextField id="outlined-basic" label="First meeting Date"
                                                variant="outlined" value={timeline1}
                                              onChange={event => setTimeline1(event.target.value)}/>
+                                                       return (
+                                                            <div>
+                                                              <DatePicker
+                                                                onChange={onChange}
+                                                                value={value}
+                                                              />
+                                                            </div>
+                                                          );
+
                                         </div>
                                     </FormControl>
                                     <div className="w-full"/>
