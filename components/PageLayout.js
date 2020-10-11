@@ -114,10 +114,17 @@ export default function ({children, isLoading}) {
                             aria-label="menu" onClick={() => toggleDrawer(true)}>
                     <MenuIcon/>
                 </IconButton>
+                <span>
+                function MyImage() {
+                    return <img src="/Banner_M.png" alt="my image" />
+                }
+
+                export default MyImage     
+                </span>
                 <span className="flex-grow">
                      <Link href="/">
                     <a className="text-xl font-semibold focus:text-gray-500 hover:text-gray-700 focus:outline-none">
-                        Project <font color="#4285F4">Hunt</font>
+                        Project Hunt
                     </a>
                 </Link>
                 </span>
