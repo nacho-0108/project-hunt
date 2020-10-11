@@ -1,7 +1,7 @@
 import react 
 
 function MyImage() {
-  return <img src="/my-image.png" alt="my image" />
+  return <img src="/Banner_M.png" alt="my image" />
 }
 
 export default MyImage
