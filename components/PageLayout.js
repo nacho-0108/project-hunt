@@ -20,6 +20,7 @@ import fb from "../src/firebase-config";
 import Grow from "@material-ui/core/Grow";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Link from "next/link";
+import MyImage from "../components/MainBanner";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -115,11 +116,7 @@ export default function ({children, isLoading}) {
                     <MenuIcon/>
                 </IconButton>
                 <span>
-                function MyImage() {
-                    return <img src="/Banner_M.png" alt="my image" />
-                }
-
-                export default MyImage     
+                <MyImage/>     
                 </span>
                 <span className="flex-grow">
                      <Link href="/">
